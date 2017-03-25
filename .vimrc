@@ -299,12 +299,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'powerline/powerline'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'morhetz/gruvbox'
 Plugin 'tpope/vim-dispatch'
 Plugin 'scrooloose/nerdtree'
 Plugin 'python-mode/python-mode'
+Plugin 'vim-airline/vim-airline'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

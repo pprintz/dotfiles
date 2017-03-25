@@ -15,16 +15,17 @@ alias .....='cd ../../../..'
 alias fancy='sudo pacman -Syu'
 
 # Config edit
-alias eV="vim $MYVIMRC"
-alias eB='vim ~/.bashrc'
-alias eBA='vim ~/.bash_aliases'
-alias eP='vim ~/.profile'
-alias eGC='vim ~/.gitconfig'
-alias eT='vim ~/.tmux.conf'
-alias eI='vim ~/.config/i3/config'
-alias ePOLY='vim ~/.config/polybar/config'
-# Antlr4
-alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.5.3-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
+alias eV="nvim $MYVIMRC"
+alias eB='nvim ~/.bashrc'
+alias eBA='nvim ~/.bash_aliases'
+alias eP='nvim ~/.profile'
+alias eGC='nvim ~/.gitconfig'
+alias eT='nvim ~/.tmux.conf'
+alias eI='nvim ~/.config/i3/config'
+alias ePOLY='nvim ~/.config/polybar/config'
+
+
+alias antlr4='java -jar /usr/local/lib/antlr-4.6-complete.jar'
 alias grun='java org.antlr.v4.gui.TestRig'
 
 # Administration
@@ -38,7 +39,8 @@ alias ll='ls -al'
 alias la='ls -A'
 alias l='ls -CF'
 
-alias e='vim'
+alias e='nvim'
+alias vim='nvim'
 
 # Clear
 alias c='clear'
