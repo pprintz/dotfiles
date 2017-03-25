@@ -78,7 +78,6 @@ font-4 = Unifont:size=5;-4
 font-5 = Termsynu:size=7;-3
 
 modules-left = bspwm i3 mpd
-modules-center = xwindow
 modules-right = temperature cpu memory wireless-network wired-network volume battery clock
 ;modules-right = memory
 
@@ -212,18 +211,19 @@ ws-icon-0 = 1.term;
 ws-icon-1 = 2.web;
 ws-icon-2 = 3.code;
 ws-icon-3 = 4.music;
-ws-icon-4 = 0:irssi;
+ws-icon-4 = 5.pdf;
+ws-icon-5 = 6.slack;
+ws-icon-6 = 0.irssi;
 ws-icon-default = 
 
 label-dimmed-underline = ${root.background}
 
 label-focused = %icon% 
 label-focused-foreground = #f3f3f3
-label-focused-background = #3f3f3f
 ;label-focused-underline = #${colors.accent}
-label-focused-underline = #9f78e1
+label-focused-underline = #8ec07c
 label-focused-font = 4
-label-focused-padding = 4
+label-focused-padding = 6
 
 label-unfocused = %icon% 
 label-unfocused-underline = #555555
@@ -287,7 +287,7 @@ label = RAM
 label-font = 4
 label-foreground = #99
 
-bar-used-width = 30
+bar-used-width = 25
 bar-used-gradient = true
 bar-used-foreground-0 = #449f3d
 bar-used-foreground-1 = #2f8419
@@ -336,7 +336,7 @@ label-disconnected-foreground = #66
 
 [module/mpd]
 type = internal/mpd
-format-online = <bar-progress>  <icon-prev> <icon-stop> <toggle> <icon-next>  <label-song>
+format-online = <bar-progress>  <icon-prev> <icon-stop> <toggle> <icon-next> <label-song>
 format-online-overline = ${root.background}
 format-online-underline = ${root.background}
 format-offline = <label-offline>
@@ -353,7 +353,7 @@ icon-repeat = 
 toggle-on-foreground =
 toggle-off-foreground = #55
 
-bar-progress-width = 45
+bar-progress-width = 35
 bar-progress-format = %{+o +u}%fill%%{-o -u}%indicator%%{+o +u}%empty%%{-u -o}
 ; bar-progress-indicator = |
 bar-progress-indicator = █
