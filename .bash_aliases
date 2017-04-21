@@ -40,7 +40,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias e='nvim'
-alias vim='nvim'
+alias vim='vim'
 
 # Clear
 alias c='clear'
@@ -70,7 +70,7 @@ alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
 # top is atop, just like vi is vim
 alias top='htop'
 #Open last vim file
-alias lvim="vim -c \"normal '0\""
+alias lvim="nvim -c \"normal '0\""
 # Show ip
 alias myip='curl http://ipecho.net/plain; echo'
 

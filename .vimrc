@@ -22,7 +22,7 @@
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Point nvim to python interpreter
-let g:pyton_host_prog='/usr/bin/python'
+let g:pyton_host_prog='/usr/bin/python3'
 
 " Display line numbers on the left
 set number
@@ -218,7 +218,7 @@ nnoremap gr gdvis::s/<C-R>///gc<left><left><left>
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
 
 " Quickly time out on keycodes, but never time out on mappings
-set notimeout ttimeout ttimeoutlen=200
+set notimeout ttimeout ttimeoutlen=0
 
 " Add newline without going to insertmode
 nnoremap <C-m> i<CR><Esc>h
@@ -268,6 +268,7 @@ map <leader>sa zg
 map <leader>s? z=
 
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -295,16 +296,46 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 "
 " let Vundle manage Vundle, required
+" PLUGIN MANAGER
 Plugin 'VundleVim/Vundle.vim'
+
+"GENERAL DEVELOPING
 Plugin 'Scrooloose/syntastic'
+
+"Autocompletion
+Plugin 'Shougo/deoplete.nvim'
 Plugin 'ervandew/supertab'
+let g:deoplete#enable_at_startup = 1
+
+"Fuzzy search
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'flazz/vim-colorschemes'
+"One theme to rule them all
 Plugin 'morhetz/gruvbox'
-Plugin 'tpope/vim-dispatch'
+
+
+"SNIPPETS
+"Plugin 'SirVer/ultisnips'
+"Plugin 'honza/vim-snippets'
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+
+
+
 Plugin 'scrooloose/nerdtree'
-Plugin 'python-mode/python-mode'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'bling/vim-bufferline'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'scrooloose/nerdcommenter'
+
+"GIT 
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
+
+"GO
+Plugin 'fatih/vim-go'
+"PYTHON
+Plugin 'python-mode/python-mode'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -322,7 +353,6 @@ let NERDTreeShowHidden=1
 " ctrl-p
 let g:ctrlp_map = '<leader>f'
 let g:ctrl_cmd = 'CtrlP'
-let g:OmniSharp_selector_ui = 'ctrlp'  " Use ctrlp.vim
 "Python mode
 let g:pymode_python = 'python3'
 
@@ -331,8 +361,10 @@ let g:pymode_python = 'python3'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 
+
 let g:gruvbox_italic=0
 
+set rnu
 colorscheme gruvbox
 
 highlight Comment cterm=italic

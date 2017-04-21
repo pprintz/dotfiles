@@ -6,8 +6,10 @@
 ############################
 # =>       General         #
 ############################
-neofetch
-export EDITOR=/usr/bin/vim
+screenfetch
+GOPATH="$HOME/go"
+export GOPATH
+export EDITOR=/usr/bin/nvim
 export MYVIMRC='~/.vimrc'
 
 # Set terminal control scheme to that of Vi
