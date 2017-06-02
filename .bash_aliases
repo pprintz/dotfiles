@@ -40,10 +40,14 @@ alias la='ls -A'
 alias l='ls -CF'
 
 alias e='nvim'
-alias vim='vim'
+alias vim='nvim'
 
 # Clear
 alias c='clear'
+
+#VM
+alias vshut='VBoxManage controlvm Windows savestate'
+alias vstart='VBoxManage startvm Windows'
 
 #Speedswapper
 alias speed='xmodmap ~/.bootstrap/.speedswapper'

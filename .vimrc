@@ -314,11 +314,11 @@ Plugin 'morhetz/gruvbox'
 
 
 "SNIPPETS
-"Plugin 'SirVer/ultisnips'
-"Plugin 'honza/vim-snippets'
-
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 
 Plugin 'scrooloose/nerdtree'
@@ -334,6 +334,8 @@ Plugin 'tpope/vim-fugitive'
 
 "GO
 Plugin 'fatih/vim-go'
+Plugin 'nsf/gocode', {'rtp': 'vim/'}
+Plugin 'zchee/deoplete-go', { 'do': 'make'}
 "PYTHON
 Plugin 'python-mode/python-mode'
 
@@ -353,6 +355,15 @@ let NERDTreeShowHidden=1
 " ctrl-p
 let g:ctrlp_map = '<leader>f'
 let g:ctrl_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 "Python mode
 let g:pymode_python = 'python3'
 

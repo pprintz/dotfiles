@@ -6,8 +6,8 @@
 ############################
 # =>       General         #
 ############################
-screenfetch
 GOPATH="$HOME/go"
+export PATH="${PATH}:$HOME/go/bin"
 export GOPATH
 export EDITOR=/usr/bin/nvim
 export MYVIMRC='~/.vimrc'
@@ -15,6 +15,16 @@ export MYVIMRC='~/.vimrc'
 # Set terminal control scheme to that of Vi
 # - Specify non standard input keys in ~/.inputrc 
 set -o vi
+
+
+# Git prompt script
+if  [ -f ~/bin/git-prompt.sh ]; then
+    . ~/bin/git-prompt.sh
+fi
+
+# git prompt integration
+export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWUNTRACKEDFILES=1
 
 # Command history 
 HISTFILE="$HOME/.history/$(date -u +%Y/%m/%d)_${HOSTNAME}_$$"
@@ -173,10 +183,11 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[1;36m\]\u@\h\[\033[00m\]:\[\033[1;36m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[1;36m\]\u@\h\[\033[00m\]:\[\033[1;36m\]\w \[\033[0;36m\]$(__git_ps1 "[%s] ")\[\033[00m\]\[\033[1;31m\]λ\[\033[00m\] '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
+
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
